@@ -1,19 +1,20 @@
 document.addEventListener('DOMContentLoaded', setupPage)
 
-function setupPage() {
+let userInput = ""
+let shortLink = ""
 
+function setupPage() {
 }
 
 function getLink() {
     event.preventDefault()
-    let userInput = document.querySelector('#input-link').value
-    getDomain(userInput)
+    userInput = document.querySelector('#input-link').value
+    getDomain()
 }
 // onsubmit event listener on form in index.html
 
-
-function getDomain(input) {
-    let splitBySlash = input.split('/')
+function getDomain() {
+    let splitBySlash = userInput.split('/')
     let domain = `${splitBySlash[0]}//${splitBySlash[2]}`
     generateLink(domain)
 }
@@ -25,6 +26,13 @@ function generateLink(domain) {
     for (let i=0; i<6; i++) {
         randomString+= options.charAt(Math.floor(Math.random() * options.length))
     }
-    console.log(`${domain}/${randomString}`)
+    shortLink = `${domain}/${randomString}`
+    renderLink()
 }
 // generate random string & add to domain
+
+function renderLink() {
+    const link = document.querySelector('#short-link')
+    link.innerHTML = shortLink
+    link.href = userInput
+}
