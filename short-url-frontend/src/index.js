@@ -35,4 +35,32 @@ function renderLink() {
     const link = document.querySelector('#short-link')
     link.innerHTML = shortLink
     link.href = userInput
+    redirectLink()
+}
+
+// function redirectLink() {
+//     console.log(shortLink, userInput)
+//     return fetch('http://localhost:3000/url/redirect', {
+//         headers: new Headers({
+//             'Content-Type': 'application/json; charset=utf-8',
+//             'short_url': shortLink,
+//             'long_url': userInput
+//         }),
+//         mode: 'no-cors',
+//         method: 'GET'
+//     }).then(res => res.json())
+// }
+
+const redirectLink = () => {
+    console.log(shortLink, userInput)
+    return fetch('http://localhost:3000/redirect', {
+        method: 'GET',
+        headers: {
+            'Access-Control-Allow-Origin': 'http://localhost:3000', 
+            "Content-Type": "application/json",
+            "short_url": shortLink,
+            "long_url": userInput
+        }
+        // mode: 'no-cors'
+    }).then(res => res.json())
 }
