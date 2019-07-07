@@ -7,14 +7,13 @@
 # anything else that needs to happen before your server is started
 # for the first time
 setup:
-	@echo "Hello World"
-	gem install 'byebug'
-	rails db:migrate
+	npm install json-server
+	json-server db.json
 # `make server` will be used after `make setup` in order to start
 # an http server process that listens on any unreserved port
 #	of your choice (e.g. 8080). 
 server:
-	bundle exec rails server
+	open index.html
 # `make test` will be used after `make setup` in order to run
 # your test suite.
 test:

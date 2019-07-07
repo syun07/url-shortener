@@ -1,0 +1,14 @@
+{
+  "urls": [
+    {
+      "id": 1,
+      "slug": "ckoVqL",
+      "target": "https://scotch.io/tutorials/json-server-as-a-fake-rest-api-in-frontend-development"
+    },
+    {
+      "slug": "MOGOd6",
+      "target": "https://www.google.com/search?q=url+shortener&oq=google+u&aqs=chrome.0.69i59j69i60l3j0j69i57.1069j0j7&sourceid=chrome&ie=UTF-8",
+      "id": 2
+    }
+  ]
+}
